@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="si" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India Exam Programs | Dahanake Music Academy</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1UNLdjr75I0vUXj8VktxMRWs3dWzTl7DJ&sz=w500" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== ROOT VARIABLES ===== */
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-blue: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-light: #dbeafe;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(37, 99, 235, 0.08);
+            --shadow-lg: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+            --shadow-xl: 0 20px 40px -8px rgba(37, 99, 235, 0.25);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --gradient-blue: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --gradient-glow: linear-gradient(135deg, #2563eb, #60a5fa, #2563eb);
+            --gradient-warm: linear-gradient(135deg, #d97706, #f59e0b);
+            --gradient-purple: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            --gradient-emerald: linear-gradient(135deg, #047857, #34d399);
+            --gradient-rose: linear-gradient(135deg, #be185d, #ec4899);
+            --btn-outline-text: #0f172a;
+            --btn-outline-border: #e2e8f0;
+            --card-radius: 20px;
+            --transition-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #080d1a;
+            --bg-secondary: #0f172a;
+            --bg-card: #131d31;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --accent-light: rgba(56, 189, 248, 0.12);
+            --border-color: rgba(56, 189, 248, 0.2);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+            --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.8);
+            --nav-bg: rgba(8, 13, 26, 0.85);
+            --gradient-blue: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+            --gradient-glow: linear-gradient(135deg, #0284c7, #38bdf8, #0284c7);
+            --btn-outline-text: #38bdf8;
+            --btn-outline-border: rgba(56, 189, 248, 0.4);
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s var(--transition-smooth), box-shadow 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', 'Abhaya Libre', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.55;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s;
+        }
+
+        .loader-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-blue);
+            animation: pulseLogo 1.8s infinite ease-in-out;
+        }
+
+        .loader-spinner {
+            margin-top: 20px;
+            width: 45px;
+            height: 45px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes pulseLogo {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 50px rgba(56, 189, 248, 0.8);
+            }
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        header {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1250px;
+            z-index: 1000;
+        }
+
+        .navbar {
+            background: var(--nav-bg);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid var(--border-color);
+            border-radius: 60px;
+            padding: 8px 20px 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            padding: 4px 14px 4px 6px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-blue);
+        }
+        .logo-text h1 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            line-height: 1.1;
+        }
+        .logo-text span {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 6px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: all 0.35s ease;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-blue);
+            background: var(--accent-light);
+        }
+
+        .theme-toggle,
+        .mobile-menu-btn {
+            background: var(--accent-light);
+            border: 1px solid var(--border-color);
+            color: var(--accent-blue);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+            transition: all 0.35s var(--transition-smooth);
+        }
+
+        .btn-primary {
+            background: var(--gradient-blue);
+            color: #ffffff;
+            box-shadow: 0 4px 18px rgba(56, 189, 248, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--btn-outline-text);
+            border: 2px solid var(--btn-outline-border);
+        }
+        .btn-outline:hover {
+            background: var(--gradient-blue);
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #1eb954;
+            transform: translateY(-3px);
+        }
+        .btn-success {
+            background: var(--gradient-emerald);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(4, 120, 87, 0.3);
+        }
+        .btn-success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(4, 120, 87, 0.5);
+        }
+        .btn-warm {
+            background: var(--gradient-warm);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(217, 119, 6, 0.3);
+        }
+        .btn-warm:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.5);
+        }
+        .btn-rose {
+            background: var(--gradient-rose);
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(190, 24, 93, 0.3);
+        }
+        .btn-rose:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(190, 24, 93, 0.5);
+        }
+
+        /* ===== LAYOUT ===== */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 110px 20px 60px;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--accent-blue);
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--gradient-blue);
+            border-radius: 4px;
+        }
+        .section-title p {
+            color: var(--text-secondary);
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 45px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text-side {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-text-side h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .hero-text-side p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-family: 'Abhaya Libre', serif;
+        }
+
+        .hero-icon-side {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .exam-badge-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .exam-badge-card i {
+            font-size: 3.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        /* ===== BOARDS GRID ===== */
+        .boards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .board-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .board-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-blue);
+        }
+
+        .board-card.bhatkhande::before {
+            background: var(--gradient-warm);
+        }
+        .board-card.gandharva::before {
+            background: var(--gradient-purple);
+        }
+
+        .board-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+        }
+
+        .board-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        .board-card .board-sub {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .board-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* ===== FEE SECTION ===== */
+        .fee-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 40px 36px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-warm);
+        }
+
+        .fee-section .fee-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .fee-section .fee-header .fee-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(217, 119, 6, 0.12);
+            color: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .fee-section .fee-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .fee-section .fee-header h2 span {
+            color: #d97706;
+        }
+
+        .fee-section .fee-header .year-badge {
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-left: auto;
+        }
+
+        /* Fee Table */
+        .fee-table-wrap {
+            overflow-x: auto;
+            margin-bottom: 28px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .fee-table thead {
+            background: var(--gradient-warm);
+            color: #fff;
+        }
+
+        .fee-table th {
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .fee-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .fee-table tbody tr {
+            background: var(--bg-primary);
+            transition: background 0.3s ease;
+        }
+
+        .fee-table tbody tr:hover {
+            background: var(--accent-light);
+        }
+
+        .fee-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fee-table .exam-name {
+            font-weight: 600;
+        }
+
+        .fee-table .exam-fee {
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .fee-table .exam-fee .currency {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Bank Details */
+        .bank-details {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px 30px;
+        }
+
+        .bank-details .bank-icon {
+            font-size: 2rem;
+            color: #1e40af;
+        }
+
+        .bank-details .bank-info {
+            flex: 1;
+        }
+
+        .bank-details .bank-info .bank-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .bank-details .bank-info .bank-detail {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .bank-details .bank-info .bank-detail strong {
+            color: var(--text-primary);
+        }
+
+        .bank-details .bank-copy {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 6px 14px 6px 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bank-details .bank-copy:hover {
+            border-color: var(--accent-blue);
+            background: var(--accent-light);
+            transform: scale(1.02);
+        }
+
+        .bank-details .bank-copy i {
+            color: var(--accent-blue);
+        }
+
+        /* ===== FORM ===== */
+        .receipt-form {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px 30px;
+            margin-top: 10px;
+        }
+
+        .receipt-form .form-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .receipt-form .form-title i {
+            color: var(--accent-blue);
+        }
+
+        .receipt-form .form-sub {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .form-group label .required {
+            color: #ef4444;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px var(--accent-light);
+        }
+
+        .form-group input[type="file"] {
+            padding: 10px 12px;
+            cursor: pointer;
+            background: var(--bg-card);
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: none;
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            margin-right: 12px;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        .form-group .file-hint {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .form-actions .btn {
+            min-width: 160px;
+            padding: 12px 28px;
+        }
+
+        /* ===== SUCCESS TOAST ===== */
+        .toast {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            max-width: 380px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 18px 22px;
+            box-shadow: var(--shadow-xl);
+            z-index: 9999;
+            transform: translateX(120%);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+            opacity: 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            border-left: 5px solid var(--gradient-emerald);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast .toast-icon {
+            font-size: 1.8rem;
+            color: #059669;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .toast .toast-content {
+            flex: 1;
+        }
+
+        .toast .toast-content .toast-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .toast .toast-content .toast-msg {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .toast .toast-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .toast .toast-close:hover {
+            color: var(--text-primary);
+        }
+
+        /* ===== FEATURES LIST ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-card i {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            background: var(--accent-light);
+            padding: 12px;
+            border-radius: 12px;
+        }
+        .feature-card h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== EXAM LEVELS GRID ===== */
+        .exam-levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .exam-level-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 26px 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exam-level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-blue);
+        }
+
+        .exam-level-card .level-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 14px;
+            border-radius: 30px;
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            border: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .exam-level-card .level-badge.instrumental {
+            background: rgba(37, 99, 235, 0.12);
+            color: #1d4ed8;
+        }
+        .exam-level-card .level-badge.vocal {
+            background: rgba(236, 72, 153, 0.12);
+            color: #be185d;
+        }
+
+        .exam-level-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .exam-level-card .level-sub {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .exam-level-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .exam-level-card .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exam-level-card .btn-group .btn {
+            flex: 1;
+            min-width: 100px;
+            justify-content: center;
+            padding: 8px 16px;
+            font-size: 0.82rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 28px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .page-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .nav-links {
+                position: fixed;
+                top: 75px;
+                right: -100%;
+                background: var(--bg-card);
+                width: 260px;
+                height: calc(100vh - 90px);
+                flex-direction: column;
+                padding: 30px 20px;
+                border-radius: 20px;
+                border: 1px solid var(--border-color);
+                transition: right 0.4s ease;
+                align-items: flex-start;
+            }
+            .nav-links.active {
+                right: 10px;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .fee-section {
+                padding: 28px 18px;
+            }
+            .fee-section .fee-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .fee-section .fee-header .year-badge {
+                margin-left: 0;
+            }
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+            .bank-details {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .bank-details .bank-copy {
+                justify-content: center;
+            }
+            .fee-table th,
+            .fee-table td {
+                padding: 10px 14px;
+                font-size: 0.85rem;
+            }
+            .toast {
+                top: 80px;
+                right: 12px;
+                left: 12px;
+                max-width: none;
+            }
+            .exam-levels-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .exam-levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .fee-section .fee-header h2 {
+                font-size: 1.3rem;
+            }
+            .fee-table th,
+            .fee-table td {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+            }
+            .fee-table .exam-name {
+                font-size: 0.8rem;
+            }
+            .receipt-form {
+                padding: 18px 14px;
+            }
+            .form-actions .btn {
+                width: 100%;
+                min-width: auto;
+                justify-content: center;
+            }
+            .fee-section {
+                padding: 20px 12px;
+            }
+            .bank-details {
+                padding: 14px 16px;
+                gap: 12px;
+            }
+            .bank-details .bank-info .bank-name {
+                font-size: 0.95rem;
+            }
+            .bank-details .bank-info .bank-detail {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* ===== LOADING SPINNER ===== */
+        .btn .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .btn.loading .spinner {
+            display: inline-block;
+        }
+
+        .btn.loading .btn-text {
+            display: none;
+        }
+
+        .btn.loading {
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTERACTIVE CANVAS BACKGROUND -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <img src="https://drive.google.com/thumbnail?id=1UNLdjr75I0vUXj8VktxMRWs3dWzTl7DJ&sz=w500" alt="Dahanake Music Academy Logo" class="loader-logo" />
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="../../index.html" class="logo-container">
+                <img src="https://drive.google.com/thumbnail?id=1UNLdjr75I0vUXj8VktxMRWs3dWzTl7DJ&sz=w500" alt="Logo" class="logo-img" />
+                <div class="logo-text">
+                    <h1>Dahanake</h1>
+                    <span>Music Academy</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html#home">Home</a></li>
+                <li><a href="../../index.html#about">About Us</a></li>
+                <li><a href="../../index.html#courses" class="active">Courses</a></li>
+                <li><a href="../../index.html#downloads">Downloads</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+
+            <div style="display:flex;align-items:center;gap:10px;">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================================================
+    MAIN CONTENT
+    ============================================================ -->
+    <section>
+        <!-- HERO BANNER -->
+        <div class="page-hero">
+            <div class="hero-text-side">
+                <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> International Music Exams</span>
+                <h1>India Exam Programs</h1>
+                <p>ඉන්දියානු සංගීත විභාග සඳහා පූර්ණ න්‍යායාත්මක සහ ප්‍රායෝගික පුහුණුව — Prayag, Bhatkhande &amp; Gandharva Mahavidyalaya.</p>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="https://wa.me/94772660756?text=I%20want%20to%20register%20for%20India%20Exam%20Programs" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Enroll via WhatsApp</a>
+                    <a href="../../index.html#courses" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> All Courses</a>
+                </div>
+            </div>
+            <div class="hero-icon-side">
+                <div class="exam-badge-card">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Sangeet Visharad</h3>
+                    <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:6px;">Recognized Worldwide Classical Music Qualifications</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        EXAM LEVELS — INSTRUMENTAL & VOCAL (MOVED UP)
+        ============================================================ -->
+        <div style="margin-top:60px;">
+            <div class="section-title">
+                <h2>INSTRUMENTAL &amp; VOCAL</h2>
+                <p>සියලුම ඉන්දියානු විභාග මට්ටම් සඳහා පුහුණු පාඨමාලා</p>
+            </div>
+
+            <div class="exam-levels-grid">
+                <!-- ===== INSTRUMENTAL ===== -->
+                <!-- Prathama Instrumental -->
+                <div class="exam-level-card">
+                    <span class="level-badge instrumental"><i class="fa-solid fa-guitar"></i> Instrumental</span>
+                    <h4>Prathama Instrumental</h4>
+                    <span class="level-sub">ප්‍රථමා වාද්‍ය — මූලික මට්ටම</span>
+                    <p>මූලික ස්වර, අලංකාර, සරල රාග හා තාල, වාද්‍ය තාක්ෂණය පිළිබඳ මූලික දැනුම.</p>
+                    <div class="btn-group">
+                        <a href="iep/pi.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Madhyama Instrumental -->
+                <div class="exam-level-card">
+                    <span class="level-badge instrumental"><i class="fa-solid fa-guitar"></i> Instrumental</span>
+                    <h4>Madhyama Instrumental</h4>
+                    <span class="level-sub">මධ්‍යමා වාද්‍ය — අතරමැදි මට්ටම</span>
+                    <p>වඩාත් සංකීර්ණ රාග, විලාම්බිත් ඛයාල්, තාන්, තාල සහ වාද්‍ය ඉම්ප්‍රොවයිසේෂන්.</p>
+                    <div class="btn-group">
+                        <a href="iep/mi.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Visharad 1 Instrumental -->
+                <div class="exam-level-card">
+                    <span class="level-badge instrumental"><i class="fa-solid fa-guitar"></i> Instrumental</span>
+                    <h4>Visharad – 1 Instrumental</h4>
+                    <span class="level-sub">විශාරද – 1 වාද්‍ය — උසස් මට්ටම (Part 1)</span>
+                    <p>සම්පූර්ණ විශාරද උපාධි මට්ටමේ පළමු කොටස. සංකීර්ණ රාග, ආලාප්, ජෝඩ්, ජාලා සහ ගැඹුරු න්‍යාය.</p>
+                    <div class="btn-group">
+                        <a href="iep/vi1.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Visharad 2 Instrumental -->
+                <div class="exam-level-card">
+                    <span class="level-badge instrumental"><i class="fa-solid fa-guitar"></i> Instrumental</span>
+                    <h4>Visharad – 2 Instrumental</h4>
+                    <span class="level-sub">විශාරද – 2 වාද්‍ය — උසස් මට්ටම (Part 2)</span>
+                    <p>විශාරද උපාධියේ දෙවන කොටස. ඉහළ මට්ටමේ රාග, තාන්, ගමක් තාන, සහ පර්යේෂණාත්මක අංශ.</p>
+                    <div class="btn-group">
+                        <a href="iep/vi2.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- ===== VOCAL ===== -->
+                <!-- Prathama Vocal -->
+                <div class="exam-level-card">
+                    <span class="level-badge vocal"><i class="fa-solid fa-microphone"></i> Vocal</span>
+                    <h4>Prathama Vocal</h4>
+                    <span class="level-sub">ප්‍රථමා ගායන — මූලික ගායන මට්ටම</span>
+                    <p>මූලික ස්වර, අලංකාර, සරල රාග සහ තාල, හර්මෝනියම් සහ තම්පුරා සමඟ ගායන පුහුණුව.</p>
+                    <div class="btn-group">
+                        <a href="iep/pv.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Madhyama Vocal -->
+                <div class="exam-level-card">
+                    <span class="level-badge vocal"><i class="fa-solid fa-microphone"></i> Vocal</span>
+                    <h4>Madhyama Vocal</h4>
+                    <span class="level-sub">මධ්‍යමා ගායන — අතරමැදි ගායන මට්ටම</span>
+                    <p>මධ්‍යම මට්ටමේ රාග, විලාම්බිත් සහ දෘත ඛයාල්, තාන්, බෝල් තාන් සහ සංකීර්ණ තාල.</p>
+                    <div class="btn-group">
+                        <a href="iep/mv.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Visharad 1 Vocal -->
+                <div class="exam-level-card">
+                    <span class="level-badge vocal"><i class="fa-solid fa-microphone"></i> Vocal</span>
+                    <h4>Visharad – 1 Vocal</h4>
+                    <span class="level-sub">විශාරද – 1 ගායන — උසස් මට්ටම (Part 1)</span>
+                    <p>විශාරද ගායන උපාධියේ පළමු කොටස. ගැඹුරු රාග, ආලාප්, ශ්‍රුති, සහ ගායන ශිල්පීය ක්‍රම.</p>
+                    <div class="btn-group">
+                        <a href="iep/vv1.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+
+                <!-- Visharad 2 Vocal -->
+                <div class="exam-level-card">
+                    <span class="level-badge vocal"><i class="fa-solid fa-microphone"></i> Vocal</span>
+                    <h4>Visharad – 2 Vocal</h4>
+                    <span class="level-sub">විශාරද – 2 ගායන — උසස් මට්ටම (Part 2)</span>
+                    <p>විශාරද ගායන උපාධියේ දෙවන කොටස. දුෂ්කර රාග, විරල තාල, සරගම්, තාන්, සහ ගායන විභාගය සඳහා සම්පූර්ණ සූදානම.</p>
+                    <div class="btn-group">
+                        <a href="iep/vv2.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                        <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        BHATKHANDE FEE SECTION
+        ============================================================ -->
+        <div class="fee-section" id="fee-section">
+            <div class="fee-header">
+                <div class="fee-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h2>Bhatkhande Sangeet Vidyapith — <span>විභාග ගාස්තු</span></h2>
+                <span class="year-badge"><i class="fa-regular fa-calendar"></i> 2026 විශරද් විභාග</span>
+            </div>
+
+            <!-- Fee Table -->
+            <div class="fee-table-wrap">
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>විභාග මට්ටම</th>
+                            <th>ගාස්තු (LKR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="exam-name">ප්‍රවේශිකා</td>
+                            <td class="exam-fee">රු 3,950</td>
+                        </tr>
+                        <tr>
+                            <td class="exam-name">ප්‍රතමා (Instrumental / Vocal)</td>
+                            <td class="exam-fee">රු 6,950</td>
+                        </tr>
+                        <tr>
+                            <td class="exam-name">මද්‍යමා (Instrumental / Vocal)</td>
+                            <td class="exam-fee">රු 7,250</td>
+                        </tr>
+                        <tr>
+                            <td class="exam-name">විශරද් 1 (Instrumental / Vocal)</td>
+                            <td class="exam-fee">රු 7,500</td>
+                        </tr>
+                        <tr>
+                            <td class="exam-name">විශරද් 2 (Instrumental / Vocal)</td>
+                            <td class="exam-fee">රු 7,750</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Bank Details -->
+            <div class="bank-details">
+                <div class="bank-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="bank-info">
+                    <div class="bank-name">🏦 බැංකු ගිණුම් තොරතුරු</div>
+                    <div class="bank-detail">
+                        <strong>ගිණුම් හිමි:</strong> D.M.N.D.Dahanake &nbsp;|&nbsp;
+                        <strong>බැංකුව:</strong> BOC Malsiripura &nbsp;|&nbsp;
+                        <strong>ගිණුම් අංකය:</strong> <span id="bankAccNo">86164397</span>
+                    </div>
+                </div>
+                <div class="bank-copy" id="copyBankBtn" title="Copy Account Number">
+                    <i class="fa-regular fa-copy"></i> පිටපත් කරන්න
+                </div>
+            </div>
+
+            <!-- Form Instruction -->
+            <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:18px;">
+                <i class="fa-solid fa-circle-info" style="color:var(--accent-blue);"></i>
+                <strong>2026 ඉන්දියන් විශරද් විභාග සඳහා ඉල්ලුම්පත්‍ර සම්පූර්ණ කළ දරුවන්</strong> අදාල විභාග ගාස්තු පහත ගිණුම් අංකයට බැර කරන්න.
+                මුදල් බැන්කු ගතකළ පසු රිසිට් පතේ දරුවාගේ නම ලියා <strong>පහත පෝරමය මගින් උඩුගත කරන්න.</strong>
+            </p>
+
+            <!-- Receipt Upload Form -->
+            <div class="receipt-form" id="uploadForm">
+                <div class="form-title">
+                    <i class="fa-solid fa-upload"></i> රිසිට්පත උඩුගත කරන්න
+                </div>
+                <p class="form-sub">ඔබගේ බැංකු රිසිට්පත මෙහි උඩුගත කරන්න. අප එය ලැබුණු පසු ඔබව තහවුරු කරන්නෙමු.</p>
+
+                <form id="receiptForm" action="https://formspree.io/f/xbjnlzwr" method="POST" enctype="multipart/form-data">
+                    <!-- Formspree hidden fields -->
+                    <input type="hidden" name="_subject" value="නව රිසිට්පතක් උඩුගත කර ඇත — Dahanake Music Academy" />
+                    <input type="hidden" name="_captcha" value="false" />
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="studentName">දරුවාගේ නම <span class="required">*</span></label>
+                            <input type="text" id="studentName" name="student_name" placeholder="උදා: මධුරංග ඩහනක" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="examLevel">විභාග මට්ටම <span class="required">*</span></label>
+                            <select id="examLevel" name="exam_level" required>
+                                <option value="">— තෝරන්න —</option>
+                                <option value="ප්‍රවේශිකා">ප්‍රවේශිකා (රු 3,950)</option>
+                                <option value="ප්‍රතමා (Instrumental)">ප්‍රතමා Instrumental (රු 6,950)</option>
+                                <option value="ප්‍රතමා (Vocal)">ප්‍රතමා Vocal (රු 6,950)</option>
+                                <option value="මද්‍යමා (Instrumental)">මද්‍යමා Instrumental (රු 7,250)</option>
+                                <option value="මද්‍යමා (Vocal)">මද්‍යමා Vocal (රු 7,250)</option>
+                                <option value="විශරද් 1 (Instrumental)">විශරද් 1 Instrumental (රු 7,500)</option>
+                                <option value="විශරද් 1 (Vocal)">විශරද් 1 Vocal (රු 7,500)</option>
+                                <option value="විශරද් 2 (Instrumental)">විශරද් 2 Instrumental (රු 7,750)</option>
+                                <option value="විශරද් 2 (Vocal)">විශරද් 2 Vocal (රු 7,750)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="receiptFile">බැංකු රිසිට්පත <span class="required">*</span></label>
+                        <input type="file" id="receiptFile" name="receipt" accept="image/*,.pdf" required />
+                        <div class="file-hint"><i class="fa-regular fa-image"></i> JPG, PNG, PDF පමණක් පිළිගනිමු. උපරිම ප්‍රමාණය 5MB.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNotes">අමතර සටහන් (විකල්ප)</label>
+                        <input type="text" id="additionalNotes" name="notes" placeholder="උදා: ගෙවීම සිදුකළ දිනය, ගනුදෙනු අංකය..." />
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success" id="submitBtn">
+                            <span class="btn-text"><i class="fa-solid fa-cloud-arrow-up"></i> රිසිට්පත උඩුගත කරන්න</span>
+                            <span class="spinner"></span>
+                        </button>
+                        <a href="https://wa.me/94772660756?text=මම%20රිසිට්පතක්%20උඩුගත%20කළෙමි%20-%20කරුණාකර%20තහවුරු%20කරන්න" target="_blank" class="btn btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp මගින් දන්වන්න
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== SYLLABUS (Collapsible) ===== -->
+        <div class="syllabus-section" style="margin-top:60px;">
+            <div class="section-title">
+                <h2>COMPLETE SYLLABUS</h2>
+                <p>වාද්‍ය (Instrumental) සහ ගායන (Vocal) විභාග විෂය නිර්දේශ වෙන වෙනම</p>
+            </div>
+
+            <!-- ===== INSTRUMENTAL ===== -->
+            <h3 class="syllabus-category-title" style="color:var(--accent-blue);margin:40px 0 20px;border-bottom:3px solid var(--border-color);padding-bottom:12px;font-size:1.8rem;font-weight:700;display:flex;align-items:center;gap:14px;">
+                <i class="fa-solid fa-guitar"></i> INSTRUMENTAL (වාද්‍ය) SYLLABUS
+            </h3>
+
+            <!-- Prathama Instrumental -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Prathama Instrumental (First Year)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <h4 style="color:var(--accent-blue);margin-top:20px;margin-bottom:8px;font-size:1.05rem;">Practical (M.M. 200)</h4>
+                        <span class="category-badge" style="display:inline-block;background:var(--accent-light);color:var(--accent-blue);padding:2px 14px;border-radius:30px;font-size:0.75rem;font-weight:600;margin-bottom:6px;">Category A</span>
+                        <div class="raga-list" style="display:flex;flex-wrap:wrap;gap:6px 12px;margin:8px 0 16px;">
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Yaman</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Bilawal</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Khamaj</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Bhairva</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Kafi</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Asawari</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Bhairavi</span>
+                        </div>
+                        <p style="font-size:0.9rem;color:var(--text-secondary);">Aroh, Avroh, Pakad, one Chota Khayal / Rajakhani Gat / Drut Gat with Todas.</p>
+                        <span class="category-badge" style="display:inline-block;background:var(--accent-light);color:var(--accent-blue);padding:2px 14px;border-radius:30px;font-size:0.75rem;font-weight:600;margin-bottom:6px;margin-top:10px;">Category B</span>
+                        <div class="raga-list" style="display:flex;flex-wrap:wrap;gap:6px 12px;margin:8px 0 16px;">
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Poorvi</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Marwa</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Todi</span>
+                        </div>
+                        <p style="font-size:0.9rem;color:var(--text-secondary);">Brief introduction, Aroh, Avroh, Pakad.</p>
+                        <h4 style="color:var(--accent-blue);margin-top:20px;margin-bottom:8px;font-size:1.05rem;">Talas</h4>
+                        <div class="raga-list" style="display:flex;flex-wrap:wrap;gap:6px 12px;margin:8px 0 16px;">
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Teentaal</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Jhaptaal</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Dadra</span>
+                            <span style="background:var(--bg-card);border:1px solid var(--border-color);padding:2px 14px;border-radius:30px;font-size:0.85rem;color:var(--text-primary);">Kaharva</span>
+                        </div>
+                        <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:10px;"><i class="fa-regular fa-circle-check"></i> Note: No theory paper in Prathama instrumental.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="iep\pi.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Madhyama Instrumental -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Madhyama Instrumental (Part I &amp; II)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/mi.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="iep/mi.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visharad 1 Instrumental -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Visharad – 1 Instrumental (Part I)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/vi1.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/vi1.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visharad 2 Instrumental -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Visharad – 2 Instrumental (Part II)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/vi2.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/vi2.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== VOCAL ===== -->
+            <h3 class="syllabus-category-title" style="color:var(--accent-blue);margin:60px 0 20px;border-bottom:3px solid var(--border-color);padding-bottom:12px;font-size:1.8rem;font-weight:700;display:flex;align-items:center;gap:14px;">
+                <i class="fa-solid fa-microphone"></i> VOCAL (ගායන) SYLLABUS
+            </h3>
+
+            <!-- Prathama Vocal -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Prathama Vocal (First &amp; Second Year)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/pv.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/pv.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Madhyama Vocal -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Madhyama Vocal (Part I &amp; II)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/mv.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/mv.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visharad 1 Vocal -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Visharad – 1 Vocal (Part I)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/vv1.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/vv1.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visharad 2 Vocal -->
+            <div class="syllabus-toggle" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+                <div class="syllabus-toggle-header" onclick="toggleSyllabus(this)" style="padding:20px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:1.1rem;background:var(--bg-secondary);border-bottom:1px solid transparent;transition:background 0.3s ease;">
+                    <span><i class="fa-regular fa-circle" style="margin-right:10px;"></i> Visharad – 2 Vocal (Part II)</span>
+                    <i class="fa-solid fa-chevron-down" style="color:var(--accent-blue);transition:transform 0.4s ease;"></i>
+                </div>
+                <div class="syllabus-toggle-body" style="max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.34,1.56,0.64,1),padding 0.3s ease;padding:0 28px;background:var(--bg-primary);">
+                    <div style="padding:28px 0;">
+                        <p style="color:var(--text-secondary);">විස්තරාත්මක සිලබස් සඳහා කරුණාකර <a href="page/Courses/vv2.html" style="color:var(--accent-blue);font-weight:600;">මෙතැන</a> ක්ලික් කරන්න. එසේත් නැත්නම් WhatsApp මගින් සම්බන්ධ වන්න.</p>
+                        <div style="margin-top:16px;display:flex;gap:12px;">
+                            <a href="page/Courses/vv2.html" class="btn btn-primary"><i class="fa-regular fa-note-sticky"></i> Note</a>
+                            <a href="https://wa.me/94772660756" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end syllabus-section -->
+
+        <!-- ===== WHY STUDY WITH US ===== -->
+        <div style="margin-top:60px;">
+            <div class="section-title">
+                <h2>WHY CHOOSE DAHANAKE MUSIC ACADEMY?</h2>
+                <p>ඉන්දියානු විභාග සඳහා අපගේ ආයතනයේ විශේෂත්වය</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-user-check"></i>
+                    <div>
+                        <h4>Experienced Teachers</h4>
+                        <p>ඉන්දියානු විශාරද උපාධිධාරී ප්‍රවීණ ගුරු මණ්ඩලය.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-book"></i>
+                    <div>
+                        <h4>Complete Notes</h4>
+                        <p>විභාගයට අදාළ Theory සහ Practical සටහන් ලබා දීම.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-sliders"></i>
+                    <div>
+                        <h4>Tanpura Practice</h4>
+                        <p>නිවැරදි ශ්‍රුති හා තාල පුහුණුව මෙන්ම Mock Practical Tests.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div>
+                        <h4>High Pass Rate</h4>
+                        <p>විභාගවලින් ඉහළම සාමාර්ථ ලබා ගැනීමේ විශිෂ්ට වාර්තා.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        AFFILIATED EXAM BOARDS (MOVED TO BOTTOM)
+        ============================================================ -->
+        <div style="margin-top:60px;">
+            <div class="section-title">
+                <h2>AFFILIATED EXAM BOARDS</h2>
+                <p>අප ආයතනය මගින් පාඨමාලා මෙහෙයවනු ලබන ප්‍රධාන ඉන්දියානු සංගීත මණ්ඩල</p>
+            </div>
+
+            <div class="boards-grid">
+                <!-- Prayag Sangeet Samiti -->
+                <div class="board-card">
+                    <div class="board-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3>Prayag Sangeet Samiti</h3>
+                    <span class="board-sub">Allahabad (Prayagraj), India</span>
+                    <p>Hindustani vocal, Instrumental (Violin, Sitar, Harmonium) සහ Percussion (Tabla) සඳහා වන ප්‍රමුඛතම විභාග මණ්ඩලයකි.</p>
+                    <a href="https://wa.me/94772660756" target="_blank" class="btn btn-outline" style="width:100%;">Inquire Syllabus <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <!-- Bhatkhande Music Institute -->
+                <div class="board-card bhatkhande">
+                    <div class="board-icon"><i class="fa-solid fa-music"></i></div>
+                    <h3>Bhatkhande Sangeet Vidyapith</h3>
+                    <span class="board-sub">Lucknow, India</span>
+                    <p>දේශීය සහ ජාත්‍යන්තර මට්ටමෙන් පිළිගත් හින්දුස්ථානී රාග සංගීතය පිළිබඳ සම්පූර්ණ විෂය නිර්දේශයන් ආවරණය කෙරේ.</p>
+                    <a href="https://wa.me/94772660756" target="_blank" class="btn btn-outline" style="width:100%;">Inquire Syllabus <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <!-- Gandharva Mahavidyalaya -->
+                <div class="board-card gandharva">
+                    <div class="board-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>Gandharva Mahavidyalaya</h3>
+                    <span class="board-sub">Mumbai / Miraj, India</span>
+                    <p>වාචික, වාද්‍ය සහ නෘත්‍ය අංශයන් සඳහා වන විභාග අදියරයන් ඉතා ක්‍රමවත්ව ප්‍රායෝගික හා න්‍යායාත්මකව උගන්වනු ලබයි.</p>
+                    <a href="https://wa.me/94772660756" target="_blank" class="btn btn-outline" style="width:100%;">Inquire Syllabus <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BACK TO COURSES ===== -->
+        <div style="text-align:center;margin-top:50px;">
+            <a href="../../index.html#courses" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Return to Main Courses Page</a>
+        </div>
+    </section>
+
+    <!-- ===== SUCCESS TOAST ===== -->
+    <div class="toast" id="successToast">
+        <div class="toast-icon"><i class="fa-regular fa-circle-check"></i></div>
+        <div class="toast-content">
+            <div class="toast-title">රිසිට්පත උඩුගත කරන ලදි!</div>
+            <div class="toast-msg">ඔබගේ බැංකු රිසිට්පත අප වෙත ලැබුණි. අප ඉක්මනින් තහවුරු කරන්නෙමු.</div>
+        </div>
+        <button class="toast-close" onclick="closeToast()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 Dahanake Music Academy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => preloader.style.display = 'none', 600);
+        });
+
+        // ===== THEME TOGGLE =====
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateToggleIcon(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon(newTheme);
+        });
+
+        function updateToggleIcon(theme) {
+            themeToggleBtn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-moon"></i>' :
+                '<i class="fa-solid fa-sun"></i>';
+        }
+
+        // ===== MOBILE MENU =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // ===== SYLLABUS TOGGLE =====
+        function toggleSyllabus(header) {
+            const body = header.nextElementSibling;
+            const icon = header.querySelector('.fa-chevron-down');
+            const isOpen = body.classList.contains('open');
+
+            document.querySelectorAll('.syllabus-toggle-body.open').forEach(el => {
+                if (el !== body) {
+                    el.classList.remove('open');
+                    el.previousElementSibling.querySelector('.fa-chevron-down').classList.remove('active');
+                }
+            });
+
+            body.classList.toggle('open');
+            if (icon) icon.classList.toggle('active');
+        }
+
+        // ===== COPY BANK ACCOUNT =====
+        document.getElementById('copyBankBtn').addEventListener('click', function() {
+            const accNo = document.getElementById('bankAccNo').textContent;
+            navigator.clipboard.writeText(accNo).then(() => {
+                const original = this.innerHTML;
+                this.innerHTML = '<i class="fa-regular fa-check-circle"></i> පිටපත් කරන ලදි!';
+                this.style.borderColor = '#059669';
+                this.style.background = 'rgba(5,150,105,0.08)';
+                setTimeout(() => {
+                    this.innerHTML = original;
+                    this.style.borderColor = '';
+                    this.style.background = '';
+                }, 2000);
+            }).catch(() => {
+                // Fallback
+                const range = document.createRange();
+                const sel = window.getSelection();
+                const el = document.getElementById('bankAccNo');
+                range.selectNodeContents(el);
+                sel.removeAllRanges();
+                sel.addRange(range);
+                document.execCommand('copy');
+                sel.removeAllRanges();
+                alert('ගිණුම් අංකය පිටපත් කරන ලදි!');
+            });
+        });
+
+        // ===== FORM SUBMISSION =====
+        const form = document.getElementById('receiptForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const toast = document.getElementById('successToast');
+
+        function showToast() {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 6000);
+        }
+
+        function closeToast() {
+            toast.classList.remove('show');
+        }
+
+        form.addEventListener('submit', function(e) {
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // The form will submit natively to Formspree
+            // We show success after a delay (Formspree redirects)
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                showToast();
+                form.reset();
+            }, 3000);
+        });
+
+        // ===== CANVAS BACKGROUND =====
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue').trim();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 40; i++) particles.push(new Particle());
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update();
+                p.draw(); });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        // ===== TOAST CLOSE ON ESCAPE =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeToast();
+        });
+    </script>
+</body>
+</html>
